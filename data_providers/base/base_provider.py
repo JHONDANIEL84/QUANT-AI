@@ -5,7 +5,7 @@ Guarantees consistent, normalized data extraction across Yahoo Finance, Binance,
 from abc import ABC, abstractmethod
 from typing import List, Optional
 from datetime import datetime
-from data_providers.base.models import MarketBar, MarketStatus
+from data_providers.base.models import MarketBar, MarketStatus, TickerSnapshot
 
 
 class BaseMarketDataProvider(ABC):
@@ -29,6 +29,11 @@ class BaseMarketDataProvider(ABC):
     @abstractmethod
     async def get_latest_price(self, symbol: str) -> Optional[float]:
         """Get latest available trade price for a symbol."""
+        pass
+
+    @abstractmethod
+    async def get_ticker_snapshot(self, symbol: str) -> Optional[TickerSnapshot]:
+        """Get 24h ticker summary (price, change, high, low, volume)."""
         pass
 
     @abstractmethod
