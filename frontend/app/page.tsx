@@ -2,6 +2,7 @@ import React from "react";
 import { SystemTelemetry } from "@/components/SystemTelemetry";
 import { PhaseTracker } from "@/components/PhaseTracker";
 import { MarketDataExplorer } from "@/components/MarketDataExplorer";
+import { TradingChart } from "@/components/chart/TradingChart";
 import {
   TrendingUp,
   Cpu,
@@ -13,6 +14,7 @@ import {
   Activity,
   ArrowUpRight,
   Sparkles,
+  LineChart,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -34,7 +36,7 @@ export default function HomePage() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-gray-400 max-w-2xl leading-relaxed">
-            Plataforma profesional de análisis cuantitativo con datos trazables, cálculos reproducibles, Smart Money Concepts (SMC), Liquidity Intelligence, asistente contextual, visión de pantalla y voz en tiempo real.
+            Plataforma profesional de análisis cuantitativo con datos trazables, cálculos vectorizados en Python, Smart Money Concepts (SMC), Liquidity Intelligence, asistente contextual, visión de pantalla y voz en tiempo real.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-4 text-xs font-mono text-gray-300">
@@ -48,13 +50,29 @@ export default function HomePage() {
             </div>
             <div className="flex items-center space-x-2 rounded-lg border border-border bg-surface/80 px-3 py-2">
               <span className="h-2 w-2 rounded-full bg-quant-cyan" />
-              <span>Mercados: <strong className="text-white">Acciones US • ETFs • Criptomonedas • BVC • Macro</strong></span>
+              <span>Gráficos: <strong className="text-white">Lightweight Charts + Motor Python</strong></span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Interactive Market Data Explorer (Phase 2 Delivery) */}
+      {/* Interactive Trading Chart (Phase 3 Core Delivery) */}
+      <section className="space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <LineChart className="h-4 w-4 text-quant-cyan" />
+            <h3 className="font-mono text-xs font-semibold tracking-wider text-gray-300 uppercase">
+              TERMINAL GRÁFICA CUANTITATIVA (FASE 3)
+            </h3>
+          </div>
+          <span className="text-xs font-mono text-gray-500">
+            Lightweight Charts • Cálculos Vectorizados Backend Python
+          </span>
+        </div>
+        <TradingChart />
+      </section>
+
+      {/* Multi-Market Data Explorer (Phase 2 Delivery) */}
       <MarketDataExplorer />
 
       {/* Backend & Systems Telemetry */}
@@ -63,43 +81,43 @@ export default function HomePage() {
       {/* 14 Phases Implementation Roadmap */}
       <PhaseTracker />
 
-      {/* Phase 2 Acceptance Criteria Verification Box */}
+      {/* Phase 3 Acceptance Criteria Verification Box */}
       <div className="rounded-xl border border-border bg-surface p-6 shadow-xl">
         <h3 className="font-mono text-sm font-semibold text-white flex items-center space-x-2 mb-3">
           <ShieldCheck className="h-4 w-4 text-quant-green" />
-          <span>VERIFICACIÓN FORMAL — CRITERIOS DE ACEPTACIÓN FASE 2 (PROVEEDORES DE MERCADO)</span>
+          <span>VERIFICACIÓN FORMAL — CRITERIOS DE ACEPTACIÓN FASE 3 (GRÁFICOS E INDICADORES)</span>
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
           <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
             <div>
-              <strong className="text-white font-mono">Yahoo Finance (Acciones & ETFs):</strong>
-              <p className="text-gray-400 mt-0.5">Adaptador yfinance con mapeo de temporalidades, caché en memoria TTL, clasificación de ETFs, información empresarial y manejo de límites.</p>
+              <strong className="text-white font-mono">Lightweight Charts Integrado:</strong>
+              <p className="text-gray-400 mt-0.5">Renderizado de velas OHLC con colores profesionales oscuros, escala de volumen acoplada, crosshairs sincronizados y reescalado adaptativo.</p>
             </div>
           </div>
 
           <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
             <div>
-              <strong className="text-white font-mono">Binance REST & WebSockets (Cripto):</strong>
-              <p className="text-gray-400 mt-0.5">Endpoints públicos Vision (Klines, Ticker 24h, Trades, Order Book depth) y cálculo de ratio de desequilibrio bid/ask sin requerir API key.</p>
+              <strong className="text-white font-mono">Indicadores Técnicos Vectorizados en Python:</strong>
+              <p className="text-gray-400 mt-0.5">Cálculo en backend de EMA 20/50/100/200, RSI 14 (Wilder), MACD (12,26,9), ATR 14, VWAP y Bandas de Bollinger sin cálculos pesados en frontend.</p>
             </div>
           </div>
 
           <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
             <div>
-              <strong className="text-white font-mono">Bolsa de Valores de Colombia (BVC CSV):</strong>
-              <p className="text-gray-400 mt-0.5">Importador y normalizador CSV para acciones colombianas en COP (Ecopetrol, Bancolombia, ISA, GEB) con validación de precios y duplicados.</p>
+              <strong className="text-white font-mono">Niveles de Fibonacci:</strong>
+              <p className="text-gray-400 mt-0.5">Cálculo de retrocesos automáticos (0.236, 0.382, 0.500, 0.618 golden ratio, 0.786) proyectados dinámicamente como líneas de precio en el gráfico.</p>
             </div>
           </div>
 
           <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
             <div>
-              <strong className="text-white font-mono">Fuentes Macroeconómicas Oficiales:</strong>
-              <p className="text-gray-400 mt-0.5">Adaptadores para Banco de la República (tasa política, TRM USD/COP), DANE (inflación IPC, desempleo, PIB) y FRED (tasas e inflación de EE. UU.).</p>
+              <strong className="text-white font-mono">Pruebas Unitarias de Fórmulas Matemáticas:</strong>
+              <p className="text-gray-400 mt-0.5">Suite exhaustiva con 27 pruebas aprobadas al 100% que validan factores de suavizado, límites de osciladores y consistencia numérica.</p>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import {
   OrderBookDepth,
   MacroIndicator,
   ProviderHealth,
+  ChartDataResponse,
 } from "@/types/market";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
@@ -90,6 +91,23 @@ export async function fetchProvidersStatus(): Promise<ProviderHealth[]> {
   });
   if (!res.ok) {
     throw new Error(`Error ${res.status}: Error al consultar estado de proveedores`);
+  }
+  return res.json();
+}
+
+export async function fetchChartData(
+  symbol: string,
+  interval: string = "1d",
+  limit: number = 150
+): Promise<ChartDataResponse> {
+  const res = await fetch(
+    `${API_BASE_URL}/api/v1/indicators/chart-data?symbol=${encodeURIComponent(
+      symbol
+    )}&interval=${encodeURIComponent(interval)}&limit=${limit}`,
+    { cache: "no-store" }
+  );
+  if (!res.ok) {
+    throw new Error(`Error ${res.status}: Fallo al cargar datos de gráfico e indicadores para ${symbol}`);
   }
   return res.json();
 }

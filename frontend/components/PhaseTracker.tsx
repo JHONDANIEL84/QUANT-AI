@@ -13,7 +13,7 @@ interface Phase {
 const PHASES: Phase[] = [
   { id: 1, title: "Fase 1: Arquitectura y Configuración", desc: "Monorepo, Next.js, FastAPI, Supabase, Normalización Base, Tests", status: "completed" },
   { id: 2, title: "Fase 2: Proveedores de Datos", desc: "Yahoo Finance (Acciones/ETFs), Binance WS (Crypto), BVC CSV, Macro", status: "completed" },
-  { id: 3, title: "Fase 3: Gráficos e Indicadores", desc: "Lightweight Charts, OHLCV, EMA 20/50/100/200, RSI, MACD, ATR, VWAP", status: "pending" },
+  { id: 3, title: "Fase 3: Gráficos e Indicadores", desc: "Lightweight Charts, OHLCV, EMA 20/50/100/200, RSI, MACD, ATR, VWAP", status: "completed" },
   { id: 4, title: "Fase 4: Price Action y Estructura", desc: "Velas japonesas, HH/HL/LH/LL, Swings, S/R, Rupturas, Retesteos", status: "pending" },
   { id: 5, title: "Fase 5: Smart Money Concepts", desc: "BOS, CHOCH, Order Blocks, Mitigation, Breakers, FVG, Premium/Discount", status: "pending" },
   { id: 6, title: "Fase 6: Liquidity Intelligence", desc: "Equal Highs/Lows, Sweeps confirmados, Order Book Depth & Imbalance", status: "pending" },
@@ -36,23 +36,22 @@ export function PhaseTracker() {
             <span>PLAN MAESTRO DE IMPLEMENTACIÓN (14 FASES)</span>
           </h3>
           <p className="text-xs text-gray-400 mt-0.5">
-            Metodología incremental rigurosa: cada fase es verificada, probada y subida a GitHub antes de avanzar.
+            Metodología incremental rigurosa: cada fase es verificada matemáticamente y subida a GitHub.
           </p>
         </div>
         <div className="flex items-center space-x-2 text-xs font-mono">
           <span className="flex items-center space-x-1 text-quant-green">
             <CheckCircle2 className="h-3.5 w-3.5" />
-            <span>Fase 1 & 2 Listas</span>
+            <span>Fases 1, 2 y 3 Listas</span>
           </span>
           <span className="text-gray-500">•</span>
-          <span className="text-gray-400">12 Fases Restantes</span>
+          <span className="text-gray-400">11 Fases Restantes</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {PHASES.map((p) => {
           const isDone = p.status === "completed";
-          const isCurrent = p.id === 2;
 
           return (
             <div

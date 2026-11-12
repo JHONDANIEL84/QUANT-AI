@@ -76,3 +76,50 @@ export interface ProviderHealth {
   latency_ms: number;
   notes?: string;
 }
+
+export interface MACDPoint {
+  timestamp: string;
+  macd: number;
+  signal: number;
+  histogram: number;
+}
+
+export interface BollingerPoint {
+  timestamp: string;
+  upper: number;
+  middle: number;
+  lower: number;
+  bandwidth: number;
+  percent_b: number;
+}
+
+export interface FibonacciLevels {
+  high: number;
+  low: number;
+  is_uptrend: boolean;
+  levels: Record<string, number>;
+}
+
+export interface ComputedIndicators {
+  symbol: string;
+  interval: string;
+  timestamps: string[];
+  ema_20?: (number | null)[];
+  ema_50?: (number | null)[];
+  ema_100?: (number | null)[];
+  ema_200?: (number | null)[];
+  rsi_14?: (number | null)[];
+  macd?: (MACDPoint | null)[];
+  atr_14?: (number | null)[];
+  vwap?: (number | null)[];
+  bollinger_bands?: (BollingerPoint | null)[];
+  fibonacci?: FibonacciLevels;
+}
+
+export interface ChartDataResponse {
+  symbol: string;
+  interval: string;
+  bars: MarketBar[];
+  indicators: ComputedIndicators;
+  computed_at: string;
+}
