@@ -30,6 +30,7 @@ import LiquidityPanel from "@/components/chart/LiquidityPanel";
 import ScannerPanel from "@/components/chart/ScannerPanel";
 import RiskPanel from "@/components/chart/RiskPanel";
 import BacktestPanel from "@/components/chart/BacktestPanel";
+import ChatPanel from "@/components/chat/ChatPanel";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -622,6 +623,11 @@ export function TradingChart() {
       {/* Laboratorio de Backtesting Causal (Phase 9) */}
       <div className="pt-2">
         <BacktestPanel defaultSymbol={symbol} defaultInterval={interval} />
+      </div>
+
+      {/* Asistente Cuantitativo Contextual QUANT AI (Phase 10) */}
+      <div className="pt-2">
+        <ChatPanel currentSymbol={symbol} currentInterval={interval} />
       </div>
     </div>
   );
