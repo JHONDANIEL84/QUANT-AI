@@ -31,6 +31,7 @@ import ScannerPanel from "@/components/chart/ScannerPanel";
 import RiskPanel from "@/components/chart/RiskPanel";
 import BacktestPanel from "@/components/chart/BacktestPanel";
 import ChatPanel from "@/components/chat/ChatPanel";
+import VisionPanel from "@/components/vision/VisionPanel";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -628,6 +629,11 @@ export function TradingChart() {
       {/* Asistente Cuantitativo Contextual QUANT AI (Phase 10) */}
       <div className="pt-2">
         <ChatPanel currentSymbol={symbol} currentInterval={interval} />
+      </div>
+
+      {/* Live Vision — Análisis Visual Multimodal (Phase 11) */}
+      <div className="pt-2">
+        <VisionPanel currentSymbol={symbol} currentInterval={interval} />
       </div>
     </div>
   );

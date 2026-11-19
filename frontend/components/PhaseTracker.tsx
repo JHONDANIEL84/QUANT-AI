@@ -21,7 +21,7 @@ const PHASES: Phase[] = [
   { id: 8, title: "Fase 8: Gestión del Riesgo y Portafolio", desc: "Simulación de capital en COP, cálculo de posición, Drawdown, R:R", status: "completed" },
   { id: 9, title: "Fase 9: Backtesting Lab", desc: "Motor cuantitativo reproducible, walk-forward, sin look-ahead bias", status: "completed" },
   { id: 10, title: "Fase 10: Chat Inteligente Contextual", desc: "Asistente QUANT AI conectado en tiempo real al estado del gráfico", status: "completed" },
-  { id: 11, title: "Fase 11: Análisis Visual (Live Vision)", desc: "Compartir pantalla con el asistente, detección de patrones en vivo", status: "pending" },
+  { id: 11, title: "Fase 11: Análisis Visual (Live Vision)", desc: "Compartir pantalla con el asistente, detección de patrones en vivo", status: "completed" },
   { id: 12, title: "Fase 12: Voz (Live Voice STT / TTS)", desc: "Conversación bidireccional por voz en español con acento local", status: "pending" },
   { id: 13, title: "Fase 13: Asistente Integrado en Vivo", desc: "Voz + Visión + Datos Cuantitativos en tiempo real en un solo panel", status: "pending" },
   { id: 14, title: "Fase 14: Seguridad, Pruebas y Despliegue", desc: "RLS exhaustivo, CI/CD GitHub Actions, Vercel & servidor Python", status: "pending" },
