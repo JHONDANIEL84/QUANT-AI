@@ -29,6 +29,7 @@ import SMCPanel from "@/components/chart/SMCPanel";
 import LiquidityPanel from "@/components/chart/LiquidityPanel";
 import ScannerPanel from "@/components/chart/ScannerPanel";
 import RiskPanel from "@/components/chart/RiskPanel";
+import BacktestPanel from "@/components/chart/BacktestPanel";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -616,6 +617,11 @@ export function TradingChart() {
       {/* Gestión del Riesgo & Calculadora de Posición (Phase 8) */}
       <div className="pt-2">
         <RiskPanel defaultSymbol={symbol} />
+      </div>
+
+      {/* Laboratorio de Backtesting Causal (Phase 9) */}
+      <div className="pt-2">
+        <BacktestPanel defaultSymbol={symbol} defaultInterval={interval} />
       </div>
     </div>
   );
