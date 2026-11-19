@@ -18,7 +18,7 @@ const PHASES: Phase[] = [
   { id: 5, title: "Fase 5: Smart Money Concepts", desc: "BOS, CHOCH, Order Blocks, Mitigation, Breakers, FVG, Premium/Discount", status: "completed" },
   { id: 6, title: "Fase 6: Liquidity Intelligence", desc: "Equal Highs/Lows, Sweeps confirmados, Order Book Depth & Imbalance", status: "completed" },
   { id: 7, title: "Fase 7: Scanner y Análisis Multitemporal", desc: "Screener multiactivo, filtros técnicos y confluencia 1H/4H/1D/1W", status: "completed" },
-  { id: 8, title: "Fase 8: Gestión del Riesgo y Portafolio", desc: "Simulación de capital en COP, cálculo de posición, Drawdown, R:R", status: "pending" },
+  { id: 8, title: "Fase 8: Gestión del Riesgo y Portafolio", desc: "Simulación de capital en COP, cálculo de posición, Drawdown, R:R", status: "completed" },
   { id: 9, title: "Fase 9: Backtesting Lab", desc: "Motor cuantitativo reproducible, walk-forward, sin look-ahead bias", status: "pending" },
   { id: 10, title: "Fase 10: Chat Inteligente Contextual", desc: "Asistente QUANT AI conectado en tiempo real al estado del gráfico", status: "pending" },
   { id: 11, title: "Fase 11: Análisis Visual (Live Vision)", desc: "Compartir pantalla con el asistente, detección de patrones en vivo", status: "pending" },

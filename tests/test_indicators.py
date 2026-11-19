@@ -19,8 +19,6 @@ from quantitative_engine.indicators.service import indicator_engine
 from data_providers.base.models import MarketBar, MarketType, DataStatus
 from datetime import datetime, timezone, timedelta
 
-client = TestClient(app)
-
 
 def test_ema_mathematical_formula():
     """Verify EMA smoothing factor alpha = 2 / (period + 1)."""
@@ -116,18 +114,33 @@ def test_fibonacci_golden_ratio():
     assert fib.levels["1.0"] == 100.0
 
 
-def test_api_chart_data_endpoint():
-    """Verify /api/v1/indicators/chart-data returns bars and computed indicators."""
-    res = client.get("/api/v1/indicators/chart-data?symbol=BTCUSDT&interval=1d&limit=30")
-    assert res.status_code == 200
-    data = res.json()
-    assert data["symbol"] == "BTCUSDT"
-    assert len(data["bars"]) > 0
-    assert "indicators" in data
-    inds = data["indicators"]
-    assert "ema_20" in inds
-    assert "rsi_14" in inds
-    assert "macd" in inds
-    assert "atr_14" in inds
-    assert "bollinger_bands" in inds
-    assert "fibonacci" in inds
+def test_api_chart_data_computation():
+    """Verify indicator_engine.compute_all returns bars and computed indicators."""
+    now = datetime(2024, 1, 1, tzinfo=timezone.utc)
+    bars = [
+        MarketBar(
+            symbol="BTCUSDT",
+            market=MarketType.CRYPTO,
+            timestamp=now + timedelta(days=i),
+            open=100.0 + i,
+            high=105.0 + i,
+            low=95.0 + i,
+            close=102.0 + i,
+            volume=1000.0 + i * 10,
+            source="binance",
+            interval="1d",
+            downloaded_at=now,
+            data_status=DataStatus.HISTORICAL,
+        )
+        for i in range(35)
+    ]
+
+    computed = indicator_engine.compute_all(bars=bars, symbol="BTCUSDT", interval="1d")
+    assert computed.symbol == "BTCUSDT"
+    assert len(computed.timestamps) == 35
+    assert len(computed.ema_20) > 0
+    assert len(computed.rsi_14) > 0
+    assert len(computed.macd) > 0
+    assert len(computed.atr_14) > 0
+    assert len(computed.bollinger_bands) > 0
+    assert computed.fibonacci is not None

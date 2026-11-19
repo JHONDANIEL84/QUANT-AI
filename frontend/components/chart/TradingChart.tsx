@@ -28,6 +28,7 @@ import PriceActionPanel from "@/components/chart/PriceActionPanel";
 import SMCPanel from "@/components/chart/SMCPanel";
 import LiquidityPanel from "@/components/chart/LiquidityPanel";
 import ScannerPanel from "@/components/chart/ScannerPanel";
+import RiskPanel from "@/components/chart/RiskPanel";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -610,6 +611,11 @@ export function TradingChart() {
       {/* Market Scanner & MTF Confluence (Phase 7) */}
       <div className="pt-2">
         <ScannerPanel defaultSymbol={symbol} defaultInterval={interval as "1d" | "4h" | "1h" | "15m"} />
+      </div>
+
+      {/* Gestión del Riesgo & Calculadora de Posición (Phase 8) */}
+      <div className="pt-2">
+        <RiskPanel defaultSymbol={symbol} />
       </div>
     </div>
   );
