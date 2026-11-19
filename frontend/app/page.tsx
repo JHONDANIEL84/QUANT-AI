@@ -122,6 +122,132 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Phase 4 Acceptance Criteria Verification Box */}
+      <div className="rounded-xl border border-border bg-surface p-6 shadow-xl">
+        <h3 className="font-mono text-sm font-semibold text-white flex items-center space-x-2 mb-3">
+          <ShieldCheck className="h-4 w-4 text-quant-green" />
+          <span>VERIFICACIÓN FORMAL — CRITERIOS DE ACEPTACIÓN FASE 4 (PRICE ACTION Y ESTRUCTURA)</span>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Detección de Patrones de Velas Japonesas:</strong>
+              <p className="text-gray-400 mt-0.5">Detección causal de Engulfing, Hammer, Inverted Hammer, Shooting Star, Hanging Man, Morning/Evening Star, Doji y Marubozu con reglas de proporción de mecha/cuerpo.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Estructura de Mercado (Swings & Tendencia):</strong>
+              <p className="text-gray-400 mt-0.5">Algoritmo fractal causal (k=3) para Swing Highs (HH, LH) y Swing Lows (HL, LL), clasificación de tendencia (Alcista, Bajista, Consolidación) y prevención de look-ahead bias con confirmación diferida.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Zonas Dinámicas de Soporte y Resistencia:</strong>
+              <p className="text-gray-400 mt-0.5">Identificación de niveles de precio por densidad de pivotes, bandas de tolerancia, conteo de toques, validación de fuerza y detección de rupturas y retesteos con invalidación objetiva.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Panel React Especializado & API Endpoint:</strong>
+              <p className="text-gray-400 mt-0.5">Ruta <code className="text-quant-cyan">/api/v1/price-action/analysis</code> integrada con componente interactivo con pestañas de Velas, Estructura y S/R, diferenciando hechos de hipótesis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Phase 5 Acceptance Criteria Verification Box */}
+      <div className="rounded-xl border border-border bg-surface p-6 shadow-xl">
+        <h3 className="font-mono text-sm font-semibold text-white flex items-center space-x-2 mb-3">
+          <ShieldCheck className="h-4 w-4 text-quant-green" />
+          <span>VERIFICACIÓN FORMAL — CRITERIOS DE ACEPTACIÓN FASE 5 (SMART MONEY CONCEPTS - SMC)</span>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">BOS (Break of Structure) & CHOCH (Change of Character):</strong>
+              <p className="text-gray-400 mt-0.5">Detección causal de rupturas continuistas (BOS) y alertas tempranas de giro estructural (CHOCH) con nivel explícito de invalidación.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Order Blocks & Breaker Blocks Institucionales:</strong>
+              <p className="text-gray-400 mt-0.5">Identificación de la última vela previa al desplazamiento, puntuación de calidad (0-100 pts) y seguimiento de mitigación e invalidación a Breaker Block.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Fair Value Gaps (FVG) & Consequent Encroachment:</strong>
+              <p className="text-gray-400 mt-0.5">Detección algorítmica de desequilibrios de 3 velas, cálculo del nivel medio CE (50%) y porcentaje dinámico de rellenado en tiempo real.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Rango Dealing, Premium / Discount & Endpoint API:</strong>
+              <p className="text-gray-400 mt-0.5">Cálculo de Equilibrium al 50%, ruta <code className="text-quant-cyan">/api/v1/smc/analysis</code> y panel interactivo con pestañas especializadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Phase 6 Acceptance Criteria Verification Box */}
+      <div className="rounded-xl border border-border bg-surface p-6 shadow-xl">
+        <h3 className="font-mono text-sm font-semibold text-white flex items-center space-x-2 mb-3">
+          <ShieldCheck className="h-4 w-4 text-quant-green" />
+          <span>VERIFICACIÓN FORMAL — CRITERIOS DE ACEPTACIÓN FASE 6 (LIQUIDITY INTELLIGENCE & SWEEPS)</span>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Equal Highs (EQH) & Equal Lows (EQL):</strong>
+              <p className="text-gray-400 mt-0.5">Agrupamiento de pivotes extremos bajo tolerancia adaptativa ATR ($\pm 0.2\%$), identificando pools de Buy-side y Sell-side con score de liquidez (0-100 pts).</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Barridos Institucionales (Sweeps & Stop Hunts):</strong>
+              <p className="text-gray-400 mt-0.5">Detección causal de mechas que penetran niveles clave con cierre inmediato por dentro (absorción institucional) y nivel explícito de invalidación.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Niveles de Sesión (PDH, PDL, PWH, PWL):</strong>
+              <p className="text-gray-400 mt-0.5">Cálculo dinámico de los máximos y mínimos de la sesión diaria y semanal anterior como referencias primarias de liquidez externa.</p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-border bg-surface-card p-3 flex items-start space-x-3">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-quant-green/20 text-quant-green text-xs font-bold shrink-0">✓</span>
+            <div>
+              <strong className="text-white font-mono">Panel React de Liquidez & Endpoint API:</strong>
+              <p className="text-gray-400 mt-0.5">Endpoint <code className="text-quant-cyan">/api/v1/liquidity/analysis</code> acoplado a componente <code className="text-quant-cyan">LiquidityPanel.tsx</code> con separación de hechos e hipótesis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -24,6 +24,10 @@ import {
 } from "lucide-react";
 import { fetchChartData } from "@/services/api";
 import { ChartDataResponse, FibonacciLevels } from "@/types/market";
+import PriceActionPanel from "@/components/chart/PriceActionPanel";
+import SMCPanel from "@/components/chart/SMCPanel";
+import LiquidityPanel from "@/components/chart/LiquidityPanel";
+import ScannerPanel from "@/components/chart/ScannerPanel";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -587,6 +591,26 @@ export function TradingChart() {
           </div>
         </div>
       )}
+
+      {/* Price Action & Market Structure Analysis (Phase 4) */}
+      <div className="pt-2">
+        <PriceActionPanel symbol={symbol} interval={interval} />
+      </div>
+
+      {/* Smart Money Concepts Analysis (Phase 5) */}
+      <div className="pt-2">
+        <SMCPanel symbol={symbol} interval={interval} />
+      </div>
+
+      {/* Liquidity Intelligence & Sweeps (Phase 6) */}
+      <div className="pt-2">
+        <LiquidityPanel symbol={symbol} interval={interval} />
+      </div>
+
+      {/* Market Scanner & MTF Confluence (Phase 7) */}
+      <div className="pt-2">
+        <ScannerPanel defaultSymbol={symbol} defaultInterval={interval as "1d" | "4h" | "1h" | "15m"} />
+      </div>
     </div>
   );
 }
