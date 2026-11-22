@@ -32,6 +32,7 @@ import RiskPanel from "@/components/chart/RiskPanel";
 import BacktestPanel from "@/components/chart/BacktestPanel";
 import ChatPanel from "@/components/chat/ChatPanel";
 import VisionPanel from "@/components/vision/VisionPanel";
+import VoicePanel from "@/components/voice/VoicePanel";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -634,6 +635,11 @@ export function TradingChart() {
       {/* Live Vision — Análisis Visual Multimodal (Phase 11) */}
       <div className="pt-2">
         <VisionPanel currentSymbol={symbol} currentInterval={interval} />
+      </div>
+
+      {/* Live Voice — Conversación por Voz STT/TTS (Phase 12) */}
+      <div className="pt-2">
+        <VoicePanel currentSymbol={symbol} currentInterval={interval} />
       </div>
     </div>
   );

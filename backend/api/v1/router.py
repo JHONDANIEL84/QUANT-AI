@@ -13,6 +13,7 @@ from backend.api.v1.risk import router as risk_router
 from backend.api.v1.backtest import router as backtest_router
 from backend.api.v1.chat import router as chat_router
 from backend.api.v1.vision import router as vision_router
+from backend.api.v1.voice import router as voice_router
 
 api_v1_router = APIRouter(prefix="/api/v1")
 
@@ -29,3 +30,4 @@ api_v1_router.include_router(risk_router)
 api_v1_router.include_router(backtest_router)
 api_v1_router.include_router(chat_router)
 api_v1_router.include_router(vision_router)
+api_v1_router.include_router(voice_router)
