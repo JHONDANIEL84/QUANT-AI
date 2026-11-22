@@ -33,6 +33,7 @@ import BacktestPanel from "@/components/chart/BacktestPanel";
 import ChatPanel from "@/components/chat/ChatPanel";
 import VisionPanel from "@/components/vision/VisionPanel";
 import VoicePanel from "@/components/voice/VoicePanel";
+import LiveAssistantHUD from "@/components/assistant/LiveAssistantHUD";
 
 const SYMBOLS = [
   { symbol: "BTCUSDT", label: "BTC/USDT", market: "Crypto" },
@@ -596,6 +597,11 @@ export function TradingChart() {
           </div>
         </div>
       )}
+
+      {/* Copiloto Unificado QUANT AI en Vivo (Phase 13) */}
+      <div className="pt-2">
+        <LiveAssistantHUD currentSymbol={symbol} currentInterval={interval} />
+      </div>
 
       {/* Price Action & Market Structure Analysis (Phase 4) */}
       <div className="pt-2">
