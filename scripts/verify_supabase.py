@@ -47,7 +47,7 @@ def verify_supabase():
         print("    Ejemplo: NEXT_PUBLIC_SUPABASE_URL=https://abcdefghijklm.supabase.co")
         return False
 
-    if not SUPABASE_KEY or "eyJhbGciOi" not in SUPABASE_KEY:
+    if not SUPABASE_KEY:
         print("[!] ADVERTENCIA: La clave API de Supabase (ANON o SERVICE_ROLE) no está configurada.")
         print("    Por favor define tu clave en .env")
         return False
