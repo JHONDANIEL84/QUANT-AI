@@ -24,10 +24,13 @@ const PHASES: Phase[] = [
   { id: 11, title: "Fase 11: Análisis Visual (Live Vision)", desc: "Compartir pantalla con el asistente, detección de patrones en vivo", status: "completed" },
   { id: 12, title: "Fase 12: Voz (Live Voice STT / TTS)", desc: "Conversación bidireccional por voz en español con acento local", status: "completed" },
   { id: 13, title: "Fase 13: Asistente Integrado en Vivo", desc: "Voz + Visión + Datos Cuantitativos en tiempo real en un solo panel", status: "completed" },
-  { id: 14, title: "Fase 14: Seguridad, Pruebas y Despliegue", desc: "RLS exhaustivo, CI/CD GitHub Actions, Vercel & servidor Python", status: "pending" },
+  { id: 14, title: "Fase 14: Seguridad, Pruebas y Despliegue", desc: "RLS exhaustivo, CI/CD GitHub Actions, Vercel & servidor Python", status: "completed" },
 ];
 
 export function PhaseTracker() {
+  const completedCount = PHASES.filter((p) => p.status === "completed").length;
+  const totalCount = PHASES.length;
+
   return (
     <div className="rounded-xl border border-border bg-surface p-5 shadow-2xl">
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
@@ -42,10 +45,10 @@ export function PhaseTracker() {
         <div className="flex items-center space-x-2 text-xs font-mono">
           <span className="flex items-center space-x-1 text-quant-green">
             <CheckCircle2 className="h-3.5 w-3.5" />
-            <span>Fases 1, 2 y 3 Listas</span>
+            <span>{completedCount} / {totalCount} Fases Listas (100%)</span>
           </span>
           <span className="text-gray-500">•</span>
-          <span className="text-gray-400">11 Fases Restantes</span>
+          <span className="text-cyan-400 font-semibold">Producción Lista</span>
         </div>
       </div>
 
