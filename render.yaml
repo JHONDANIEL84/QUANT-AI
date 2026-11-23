@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: quant-ai-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: standard
+    region: oregon
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: QUANT_API_HOST
+        value: 0.0.0.0
+      - key: QUANT_API_PORT
+        value: 8000
+      - key: DEFAULT_CURRENCY
+        value: COP
+      - key: DEFAULT_TIMEZONE
+        value: America/Bogota
+      - key: CORS_ORIGINS
+        value: '["https://quant-ai-frontend.vercel.app","http://localhost:3000"]'
+      - key: AI_PROVIDER
+        value: gemini
+      - key: AI_MODEL
+        value: gemini-1.5-pro
+      - key: AI_VISION_MODEL
+        value: gemini-1.5-flash
+      - key: AI_API_KEY
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
